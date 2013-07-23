@@ -1,0 +1,23 @@
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    rt = remote
+    lg = log -p
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    undo = reset --hard
+[color]
+    status = auto
+    branch = auto
+	ui = true
+[user]
+    name = xuxin
+    email = xuxin@kw12157.kaust.edu.sa
+[core]
+    pager = less -FXRS
+    editor = emacs
+[credential]
+	helper = osxkeychain

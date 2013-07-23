@@ -1,0 +1,5 @@
+# Git exlusion patterns (system wide)
+
+*~
+.DS_Store
+._*

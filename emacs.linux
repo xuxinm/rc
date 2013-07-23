@@ -1,0 +1,113 @@
+;; .emacs
+
+;;; uncomment this line to disable loading of "default.el" at startup
+(setq inhibit-startup-message t) 
+(setq inhibit-default-init t)
+
+;; enable visual feedback on selections
+(setq transient-mark-mode t)
+
+;; default to better frame titles
+(setq frame-title-format
+      (concat  "%b - emacs@" (system-name)))
+
+;; default to unified diffs
+(setq diff-switches "-u")
+
+;; always end a file with a newline
+(setq require-final-newline 'query)
+
+;; uncomment for CJK utf-8 support for non-Asian users
+;; (require 'un-define)
+
+;; highlight search object 
+(setq search-highlight t)
+(setq query-replace-highlight t)
+
+;; colors
+;; (set-cursor-color "white")
+;; (set-mouse-color "white")
+;;(set-face-foreground 'default "#3465A4")
+;;(set-face-background 'default "#FFFFDD")
+;; (setq font-lock-maximum-decoration t)
+;; (set-face-foreground 'font-lock-string-face "color-56")
+;; (set-face-foreground 'font-lock-constant-face "brightred")
+;; (set-face-foreground 'font-lock-comment-face "black")
+;; (set-face-foreground 'font-lock-keyword-face "brightgreen")
+;; (set-face-foreground 'font-lock-type-face "brightyellow")
+;; (set-face-foreground 'font-lock-function-name-face "brightcyan")
+;; (set-face-foreground 'font-lock-variable-name-face "color-130")
+;; (set-face-background 'region "color-245")
+;; (set-face-foreground 'region "white")
+
+;; match parenthesis
+(show-paren-mode)
+(setq show-paren-style 'mixed)
+
+;; line/col number
+(setq line-number-mode t)
+(setq column-number-mode t)
+
+;; time
+(display-time)
+
+;; font
+;; (set-default-font "Bitstream Vera Sans Mono-10") 
+(global-font-lock-mode t)
+
+;; cc mode indentation
+(setq-default c-basic-offset 4)
+
+;; indent
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+;; Python Hook
+(add-hook 'python-mode-hook '(lambda () 
+    (setq python-indent 4)))
+
+;; SConstruct
+(setq auto-mode-alist
+      (cons '("SConstruct" . python-mode) auto-mode-alist))
+(set-default 'compile-command "scons")
+
+;; LaTeX template files
+(add-to-list 'auto-mode-alist '("\\.cls\\'" . latex-mode))
+(add-to-list 'auto-mode-alist '("\\.sty\\'" . latex-mode))
+
+;; print ASCII table (M-x ascii-table)
+(defun ascii-table ()
+  (interactive)
+  (switch-to-buffer "*ASCII*")
+  (erase-buffer)
+  (insert (format "ASCII characters up to number %d.\n" 254))
+  (let ((i 0))
+    (while (< i 254)
+      (setq i (+ i 1))
+      (insert (format "%4d %c\n" i i))))
+  (beginning-of-buffer))
+
+;; insert date (M-x insert-date)
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%a %Y-%m-%d")))
+
+;; insert time (M-x insert-time)
+(defun insert-time ()
+  (interactive)
+  (insert (format-time-string "%l:%M %p")))
+
+;; (custom-set-variables
+;;   ;; custom-set-variables was added by Custom.
+;;   ;; If you edit it by hand, you could mess it up, so be careful.
+;;   ;; Your init file should contain only one such instance.
+;;   ;; If there is more than one, they won't work right.
+;;  '(column-number-mode t)
+;;  '(display-time-mode t)
+;;  '(show-paren-mode t))
+;; (custom-set-faces
+;;   ;; custom-set-faces was added by Custom.
+;;   ;; If you edit it by hand, you could mess it up, so be careful.
+;;   ;; Your init file should contain only one such instance.
+;;   ;; If there is more than one, they won't work right.
+;;  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
