@@ -1,0 +1,4 @@
+bash
+====
+
+Common Bash configurations
