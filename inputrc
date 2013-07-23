@@ -1,0 +1,2 @@
+# avoid <tab> twice completion
+set show-all-if-ambiguous on

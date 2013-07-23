@@ -1,0 +1,84 @@
+! #define statements are effective only when this scripts is processed by
+! 
+! 	xrdb -merge ~/.Xresources
+! 
+
+! Preferred font. This seems not working. Need quotes?
+! #define FONT_MONO -*-fixed-bold-r-*-*-15-140-*-*-*-*-iso8859-1
+! #define FONT_SANS -adobe-helvetica-bold-r-normal-*-17-120-100-100-p-92-iso8859-1
+
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.dpi: 120
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+! ================ xterm ================
+XTerm*loginShell: true
+XTerm.vt100.geometry: 80x25
+XTerm*Foreground: black
+XTerm*Background: seashell
+XTerm*CursorColor: darkorange1
+XTerm*ScrollBar: on
+XTerm*ScrollKey: true
+XTerm*ScrollTtyOutput: false
+XTerm*TitleBar: on
+XTerm*TextUnderIcon: on
+XTerm*AllowIconInput: on
+XTerm*AutoRaise: on
+XTerm*TermType: XTerm
+! < Truetype fonts >
+XTerm*FaceName: Bitstream Vera Sans Mono
+XTerm*FaceSize: 11
+! < legacy X11 fonts >
+XTerm*Font: -*-lucidatypewriter-medium-r-normal-*-17-120-*-*-*-*-iso8859-1
+XTerm*VisualBell: True
+XTerm*SaveLines: 1024
+!XTerm*ttyModes: intr ^c erase ^h susp ^@ dsusp ^@ kill ^u eof ^d
+XTerm*ReverseWrap: true
+
+! screen saver
+XLock.Mode: blank
+XLock.MouseMotion: on
+XLock.Qix.Delay: 20000
+XLock.Qix.Batchcount: 32
+XLock.Font: -*-lucidatypewriter-medium-r-normal-*-17-120-*-*-*-*-iso8859-1
+XLock.Background: black
+XLock.Foreground: red
+Xautolock.time: 1
+Xautolock.notify: 1
+Xautolock.corners: ++++
+Xautolock.cornerdelay: 1
+Xautolock.locker: "xlock -mode blank"
+
+! xman
+XMan*Font: -*-lucidatypewriter-bold-r-normal-*-17-120-*-*-*-*-iso8859-1
+XMan*ManualFontNormal: -*-lucidatypewriter-bold-r-normal-*-17-120-*-*-*-*-iso8859-1
+XMan*ManualFontBold: -*-lucidatypewriter-bold-r-normal-*-17-120-*-*-*-*-iso8859-1
+XMan*ManualFontItalic: -*-lucidatypewriter-bold-r-normal-*-17-120-*-*-*-*-iso8859-1
+
+! clock
+XDaliclock.Mode: 12
+XDaliclock.Datemode: dd/mm/yy
+XDaliclock.Seconds: True
+XDaliclock.Font: -*-lucidatypewriter-medium-r-normal-*-17-120-*-*-*-*-iso8859-1
+
+! xload
+XLoad.Highlight: Green
+XLoad.Geometry: 70x70-0+64
+
+! rxvt-unicode
+! urxvt*font: xft:Monaco:pixelsize=15
+urxvt*transparent: false
+urxvt*background: black
+urxvt*foreground: white
+! urxvt*perl-ext-common:
+! urxvt*tabbed.tabbar-fg: 2
+! urxvt*tabbed.tabbar-bg: 0
+
+! ghostview
+ghostview*Font: -adobe-helvetica-bold-r-normal-*-17-120-100-100-p-92-iso8859-1
+ghostview*Text*Font: -adobe-helvetica-bold-r-normal-*-17-120-100-100-p-92-iso8859-1
+ghostview*Background: #d9d9d9
+ghostview*Foreground: white
