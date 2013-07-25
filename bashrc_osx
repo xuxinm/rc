@@ -1,7 +1,7 @@
-# global settings
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# Need to include following in ~/.bash_profile 
+# if [ -f /etc/bashrc ]; then
+#	. /etc/bashrc
+# fi
 
 # bash alias
 alias ..='cd ..'
